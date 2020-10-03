@@ -3,6 +3,7 @@ package br.com.conta.banco.controller;
 import java.net.URI;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class ClienteController {
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<ClienteDto>cadastrar(@RequestBody ClienteForm form, UriComponentsBuilder uriBuilder){
+	public ResponseEntity<ClienteDto>cadastrar(@RequestBody @Valid ClienteForm form, UriComponentsBuilder uriBuilder){
 		Cliente cliente = form.converter(clienteRepository);
 		clienteRepository.save(cliente);
 		URI uri = uriBuilder.path("/clientes/{id}").buildAndExpand(cliente.getId()).toUri();

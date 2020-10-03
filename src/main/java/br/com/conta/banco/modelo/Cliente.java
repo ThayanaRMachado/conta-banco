@@ -20,10 +20,14 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	public Cliente(Long id, String nome) {
+	public Cliente(Long id, String nome, String sobrenome, String email, String cnh, String dataNascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.cnh = cnh;
+		this.dataNascimento = dataNascimento;
 	}
 
 	@Override

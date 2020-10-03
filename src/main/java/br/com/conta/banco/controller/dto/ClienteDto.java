@@ -1,5 +1,7 @@
 package br.com.conta.banco.controller.dto;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import br.com.conta.banco.modelo.Cliente;
 
 public class ClienteDto {
@@ -9,6 +11,7 @@ public class ClienteDto {
 	private String sobrenome;
 	private String email;
 	private String cnh;
+	private String cpf;
 	private String dataNascimento;
 
 	public ClienteDto(Cliente cliente) {
@@ -17,6 +20,7 @@ public class ClienteDto {
 		this.sobrenome = cliente.getSobrenome();
 		this.email = cliente.getEmail();
 		this.cnh = cliente.getCnh();
+		this.cpf = cliente.getCpf();
 		this.dataNascimento = cliente.getDataNascimento();
 	}
 
@@ -38,6 +42,10 @@ public class ClienteDto {
 
 	public String getCnh() {
 		return cnh;
+	}
+
+	public String getCpf() {
+		return cpf;
 	}
 
 	public String getDataNascimento() {

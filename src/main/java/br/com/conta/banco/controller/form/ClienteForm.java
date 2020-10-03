@@ -4,7 +4,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 
@@ -14,24 +13,26 @@ import br.com.conta.banco.repository.ClienteRepository;
 public class ClienteForm {
 
 	private Long id;
-	
+
 	@NotEmpty
 	@Size(min = 5)
 	private String nome;
-	
+
 	@NotEmpty
 	@Size(min = 4)
 	private String sobrenome;
-	
+
 	@Email
 	@Size(min = 12)
 	private String email;
-	
+
 	@Size(min = 11, max = 11)
 	@NumberFormat
 	private String cnh;
-	
-	
+
+	@CPF
+	private String cpf;
+
 	private String dataNascimento;
 
 	public Long getId() {
@@ -74,6 +75,14 @@ public class ClienteForm {
 		this.cnh = cnh;
 	}
 
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
@@ -84,6 +93,6 @@ public class ClienteForm {
 
 	public Cliente converter(ClienteRepository clienteRepository) {
 		Cliente cliente = clienteRepository.findByNome(nome);
-		return new Cliente(id, nome, sobrenome, email, cnh, dataNascimento);
+		return new Cliente(id, nome, sobrenome, email, cnh, cpf, dataNascimento);
 	}
 }

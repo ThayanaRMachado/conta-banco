@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 public class Cliente {
 	@Id
@@ -14,19 +16,20 @@ public class Cliente {
 	private String sobrenome;
 	private String email;
 	private String cnh;
+	private String cpf;
 	private String dataNascimento;
-	
-	
+
 	public Cliente() {
 	}
 
-	public Cliente(Long id, String nome, String sobrenome, String email, String cnh, String dataNascimento) {
+	public Cliente(Long id, String nome, String sobrenome, String email, String cnh, String cpf, String dataNascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
 		this.cnh = cnh;
+		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -93,6 +96,14 @@ public class Cliente {
 
 	public void setCnh(String cnh) {
 		this.cnh = cnh;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getDataNascimento() {

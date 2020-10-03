@@ -1,3 +1,3 @@
-INSERT INTO CLIENTE(nome, sobrenome, email, cnh, data_Nascimento)VALUES('João', 'Moreira', 'aluno@email.com', '12345690876', '02/01/1980');
-INSERT INTO CLIENTE(nome, sobrenome, email, cnh, data_Nascimento)VALUES('Pedro', 'Duarte', 'pedro@email.com', '16310897643', '04/10/1984');
-INSERT INTO CLIENTE(nome, sobrenome, email, cnh, data_Nascimento)VALUES('Fabio', 'Dias', 'fabio@email.com', '109876345678', '05/06/1983');
+INSERT INTO CLIENTE(nome, sobrenome, email, cnh, cpf, data_Nascimento)VALUES('João', 'Moreira', 'aluno@email.com', '12345690876', '56789054367', '02/01/1980');
+INSERT INTO CLIENTE(nome, sobrenome, email, cnh, cpf, data_Nascimento)VALUES('Pedro', 'Duarte', 'pedro@email.com', '16310897643', '98563457123', '04/10/1984');
+INSERT INTO CLIENTE(nome, sobrenome, email, cnh, cpf, data_Nascimento)VALUES('Fabio', 'Dias', 'fabio@email.com', '09876345678', '12563457803', '05/06/1983');

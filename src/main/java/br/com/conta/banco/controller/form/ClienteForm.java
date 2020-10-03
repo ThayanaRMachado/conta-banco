@@ -5,6 +5,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 import br.com.conta.banco.modelo.Cliente;
@@ -32,7 +33,7 @@ public class ClienteForm {
 
 	@CPF
 	private String cpf;
-
+	
 	private String dataNascimento;
 
 	public Long getId() {
